@@ -22,7 +22,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const productLinks = [
-  { label: 'View All Products', href: '#products' },
+  { label: 'View All Products', href: '/#products' },
   { label: 'Packaging Solutions', href: '/products/packaging-machines' },
   { label: 'Printing Solutions', href: '/products/printing-solutions' },
   { label: 'Inspection Solutions', href: '/products/inspection-solutions' },
@@ -138,16 +138,15 @@ const Header = () => {
       <Drawer anchor="right" open={mobileOpen} onClose={toggleDrawer}>
         <Box sx={{ width: 260 }} role="presentation" onClick={toggleDrawer}>
           <List>
-            <ListItem button component="a" href="#">
+            <ListItem component="a" href="#">
               <ListItemText primary="Home" />
             </ListItem>
-            <ListItem button component="a" href="#about">
+            <ListItem component="a" href="#about">
               <ListItemText primary="About Us" />
             </ListItem>
             <Divider />
             {productLinks.map(({ label, href }) => (
               <ListItem
-                button
                 key={label}
                 component={href.startsWith('#') ? 'a' : Link}
                 href={href}
@@ -157,7 +156,7 @@ const Header = () => {
               </ListItem>
             ))}
             <Divider />
-            <ListItem button component="a" href="#services">
+            <ListItem component="a" href="#services">
               <ListItemText primary="Services" />
             </ListItem>
           </List>
